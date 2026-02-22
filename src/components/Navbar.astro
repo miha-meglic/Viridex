@@ -1,0 +1,23 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+
+<header class="bg-white border-b border-gray-200 sticky top-0 z-50">
+  <div class="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
+    <!-- Logo -->
+    <a href="/" class="flex items-center gap-2">
+      <img src="/logo.svg" alt="Viridex logo" class="h-8 w-auto" />
+    </a>
+    <!-- Nav links -->
+    <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-700">
+      <a href="/#gradiva" class="hover:text-slate-800 transition-colors"> Gradiva </a>
+      <a href="/about" class="hover:text-slate-800 transition-colors"> O projektu </a>
+      <span
+        class="flex items-center gap-1.5 bg-gray-100 text-gray-700 text-xs font-semibold px-3 py-1.5 rounded-full transition-colors"
+      >
+        <Icon name="ph:calendar-dots-light" class="w-3.5 h-3.5" />
+        Matura 2025/26
+      </span>
+    </nav>
+  </div>
+</header>

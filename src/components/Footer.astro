@@ -1,0 +1,67 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+
+<footer class="bg-white border-t border-gray-200 py-12">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-10 pb-8 border-b border-gray-100">
+      <!-- Brand -->
+      <div class="flex flex-col gap-4">
+        <img src="/logo.svg" alt="Viridex logo" class="h-8 w-auto self-start" />
+        <p class="text-sm text-gray-500 leading-relaxed max-w-xs">
+          Nismo uradni zastopnik RIC-a, ampak neodvisna platforma, ki nudi
+          <span class="text-teal-700 font-medium">kakovostna gradiva po njihovem katalogu.</span>
+        </p>
+      </div>
+
+      <!-- RIC Dokumenti -->
+      <div>
+        <h4 class="text-sm font-bold text-gray-900 mb-3">RIC Dokumenti</h4>
+        <ul class="flex flex-col gap-2 text-sm text-gray-700">
+          <li>
+            <a
+              href="https://www.ric.si/splosna-matura/predmeti/"
+              class="hover:text-gray-500 transition-colors flex items-center gap-1.5"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Icon name="ph:file-text" class="h-4" />
+              Predmetni katalog
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.ric.si/"
+              class="hover:text-gray-500 transition-colors flex items-center gap-1.5"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Icon name="ph:arrow-square-out" class="h-4" />
+              Uradna stran RIC
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Informacije -->
+      <div>
+        <h4 class="text-sm font-bold text-gray-900 mb-3">Informacije</h4>
+        <ul class="flex flex-col gap-2 text-sm text-gray-700">
+          <li>
+            <a href="/terms" class="hover:text-gray-500 transition-colors"> Pogoji uporabe </a>
+          </li>
+          <li>
+            <a href="/privacy" class="hover:text-gray-500 transition-colors">
+              Politika zasebnosti
+            </a>
+          </li>
+          <li>
+            <a href="/about" class="hover:text-gray-500 transition-colors"> O projektu </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="text-xs text-gray-400 text-center mt-6">© 2026 Viridex. Vse pravice pridržane.</p>
+  </div>
+</footer>
