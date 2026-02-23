@@ -48,15 +48,19 @@ import { Icon } from 'astro-icon/components';
         <h4 class="text-sm font-bold text-gray-900 mb-3">Informacije</h4>
         <ul class="flex flex-col gap-2 text-sm text-gray-700">
           <li>
-            <a href="/terms" class="hover:text-gray-500 transition-colors"> Pogoji uporabe </a>
+            <a href="/terms" class="hover:text-gray-500 transition-colors" data-astro-prefetch>
+              Pogoji uporabe
+            </a>
           </li>
           <li>
-            <a href="/privacy" class="hover:text-gray-500 transition-colors">
+            <a href="/privacy" class="hover:text-gray-500 transition-colors" data-astro-prefetch>
               Politika zasebnosti
             </a>
           </li>
           <li>
-            <a href="/about" class="hover:text-gray-500 transition-colors"> O projektu </a>
+            <a href="/about" class="hover:text-gray-500 transition-colors" data-astro-prefetch>
+              O projektu
+            </a>
           </li>
         </ul>
       </div>

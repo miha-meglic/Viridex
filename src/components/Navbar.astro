@@ -10,8 +10,12 @@ import { Icon } from 'astro-icon/components';
     </a>
     <!-- Nav links -->
     <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-700">
-      <a href="/#gradiva" class="hover:text-slate-800 transition-colors"> Gradiva </a>
-      <a href="/about" class="hover:text-slate-800 transition-colors"> O projektu </a>
+      <a href="/#gradiva" class="hover:text-slate-800 transition-colors" data-astro-prefetch>
+        Gradiva
+      </a>
+      <a href="/about" class="hover:text-slate-800 transition-colors" data-astro-prefetch>
+        O projektu
+      </a>
       <span
         class="flex items-center gap-1.5 bg-gray-100 text-gray-700 text-xs font-semibold px-3 py-1.5 rounded-full transition-colors"
       >
