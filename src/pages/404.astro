@@ -1,0 +1,32 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Icon } from 'astro-icon/components';
+---
+
+<Layout>
+  <main class="min-h-[75vh] bg-gray-50 flex items-center justify-center px-6 py-20">
+    <div class="max-w-md w-full text-center flex flex-col items-center gap-6">
+      <div class="w-16 h-16 rounded-2xl bg-teal-100/60 flex items-center justify-center">
+        <Icon name="ph:map-trifold-light" class="w-8 h-8 text-teal-700" />
+      </div>
+
+      <div>
+        <p class="text-sm font-bold tracking-widest uppercase text-teal-600 mb-2">404</p>
+        <h1 class="text-3xl font-extrabold uppercase text-gray-900 mb-3">Stran ne obstaja</h1>
+        <p class="text-gray-500 text-sm leading-relaxed">
+          Stran, ki jo iščeš, ne obstaja ali je bila premaknjena.
+        </p>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
+        <a
+          href="/"
+          class="inline-flex items-center justify-center gap-2 bg-[#1e5f6b] text-white font-semibold text-sm px-6 py-3 rounded-lg hover:bg-teal-800 transition-colors shadow"
+        >
+          <Icon name="ph:house" class="w-4 h-4" />
+          Domov
+        </a>
+      </div>
+    </div>
+  </main>
+</Layout>

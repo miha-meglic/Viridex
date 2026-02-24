@@ -5,11 +5,13 @@ import { Icon } from 'astro-icon/components';
 const handbooks: {
   subject: string;
   description: string;
+  href?: string;
   status: 'available' | 'coming';
 }[] = [
   {
     subject: 'Računalništvo',
     description: 'Celovit maturitetni priročnik po uradnem katalogu RIC.',
+    href: '/learn/prirocnik-racunalnistvo',
     status: 'available',
   },
   {
@@ -23,6 +25,7 @@ const handbooks: {
 const books: {
   subject: string;
   description: string;
+  href?: string;
   status: 'available' | 'coming';
 }[] = [
   {
@@ -74,15 +77,15 @@ const books: {
               handbooks.map((item) => (
                 <div class="bg-white border border-gray-200 rounded-xl p-5 flex flex-col gap-4 hover:shadow-md transition-shadow">
                   <div class="flex items-start justify-between">
-                    <div class="w-9 h-9 rounded-lg bg-teal-50 flex items-center justify-center">
+                    <div class="w-9 h-9 rounded-lg bg-teal-100/60 flex items-center justify-center">
                       <Icon name="ph:book-open-text-light" class="w-4 h-4 text-teal-700" />
                     </div>
                     {item.status === 'available' ? (
-                      <span class="text-[10px] font-bold tracking-widest uppercase text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full">
+                      <span class="text-[10px] font-bold tracking-widest uppercase text-emerald-600 bg-emerald-100/60 px-2 py-0.5 rounded-full">
                         Na voljo
                       </span>
                     ) : (
-                      <span class="text-[10px] font-bold tracking-widest uppercase text-amber-600 bg-amber-50 px-2 py-0.5 rounded-full">
+                      <span class="text-[10px] font-bold tracking-widest uppercase text-amber-600 bg-amber-100/60 px-2 py-0.5 rounded-full">
                         Kmalu
                       </span>
                     )}
@@ -93,7 +96,7 @@ const books: {
                   </div>
                   {item.status === 'available' ? (
                     <a
-                      href="#"
+                      href={item.href}
                       class="mt-auto inline-flex items-center gap-1 text-sm font-medium text-gray-700 border border-gray-200 rounded-lg px-3 py-2 hover:bg-gray-50 transition-colors"
                     >
                       Odpri priročnik
@@ -125,15 +128,15 @@ const books: {
               books.map((item) => (
                 <div class="bg-white border border-gray-200 rounded-xl p-5 flex flex-col gap-4 hover:shadow-md transition-shadow">
                   <div class="flex items-start justify-between">
-                    <div class="w-9 h-9 rounded-lg bg-teal-50 flex items-center justify-center">
+                    <div class="w-9 h-9 rounded-lg bg-teal-100/60 flex items-center justify-center">
                       <Icon name="ph:graduation-cap-light" class="w-4 h-4 text-teal-700" />
                     </div>
                     {item.status === 'available' ? (
-                      <span class="text-[10px] font-bold tracking-widest uppercase text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full">
+                      <span class="text-[10px] font-bold tracking-widest uppercase text-emerald-600 bg-emerald-100/60 px-2 py-0.5 rounded-full">
                         Na voljo
                       </span>
                     ) : (
-                      <span class="text-[10px] font-bold tracking-widest uppercase text-amber-600 bg-amber-50 px-2 py-0.5 rounded-full">
+                      <span class="text-[10px] font-bold tracking-widest uppercase text-amber-600 bg-amber-100/60 px-2 py-0.5 rounded-full">
                         Kmalu
                       </span>
                     )}
@@ -144,7 +147,7 @@ const books: {
                   </div>
                   {item.status === 'available' ? (
                     <a
-                      href="#"
+                      href={item.href}
                       class="mt-auto inline-flex items-center gap-1 text-sm font-medium text-gray-700 border border-gray-200 rounded-lg px-3 py-2 hover:bg-gray-50 transition-colors"
                     >
                       Odpri učbenik
