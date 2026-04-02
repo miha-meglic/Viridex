@@ -1,0 +1,96 @@
+---
+title: "Številski sistemi"
+---
+
+V računalništvu se glede na potrebe uporabljajo različni številski sistemi. Najpogosteje se srečujemo z naslednjimi:
+
+- **Dvojiški sistem (binarni)**: uporablja samo dve števki, 0 in 1. To je osnovni sistem, ki ga računalniki uporabljajo za shranjevanje in obdelavo podatkov.
+- **Osmiški sistem (oktalni)**: uporablja osem števk, od 0 do 7. Pogosto se uporablja kot bolj kompaktna oblika zapisa binarnih števil, saj vsaka oktalna števka predstavlja tri binarne števke.
+- **Desetiški sistem**: uporablja deset števk, od 0 do 9. To je sistem, ki ga uporabljamo v vsakdanjem življenju.
+- **Šestnajstiški sistem (heksadecimalni)**: uporablja šestnajst števk, od 0 do 9 in od A do F (kjer A predstavlja 10, B predstavlja 11, ..., F predstavlja 15). Ta sistem se pogosto uporablja v računalništvu, saj vsaka šestnajstiška števka predstavlja štiri binarne števke, kar omogoča bolj kompaktno predstavitev binarnih števil.
+
+Na maturi od vas pričakujejo, da boste poznali vsaj naštete številske sisteme in njihove pogoste uporabe, znali med njimi pretvarjati, z njimi računati in razumeli osnove preverjanja pravilnosti zapisov.
+
+## Kje se uporabljajo?
+
+| **Številski sistem** | **Uporaba** | **Primer** |
+|:---------------------|:------------|:-----------|
+| Dvojiški (binarni) | Shranjevanje in obdelava podatkov v računalniku | 1010 (10 v desetiškem) |
+| Osmiški (oktalni) | Kompaktna oblika zapisa binarnih števil, UNIX pravice/dovoljenja | 12 (10 v desetiškem) |
+| Desetiški | Vsakodnevna uporaba, splošno programiranje | 42 |
+| Šestnajstiški (heksadecimalni) | Kompaktnejši zapis binarnih števil, barvno kodiranje, IPv6 naslovi | A (10 v desetiškem) <br/> RGB: #<span style={{color: '#ff0000'}}>rr</span><span style={{color: '#00ff00'}}>gg</span><span style={{color: '#0000ff'}}>bb</span> (<div style={{backgroundColor: '#ff0000', width: '.8rem', height: '.8rem', borderRadius: '50%', display: 'inline-block'}}></div> #ff0000) <br/> IPv6: 2001:db8::ff00:42:8329 |
+
+## Pretvarjanje med številskimi sistemi
+
+Pretvorbe med različnimi številskimi sistemi vse sledijo istemu osnovnemu principu: deljenje z osnovo sistema (za pretvorbo v nižji sistem) ali množenje z osnovo sistema (za pretvorbo v višji sistem). Spodaj so opisani postopki za pretvorbo med desetiškim in dvojiškim sistemom.
+
+Pri pretvorbi med dvojiškim ter osmiškim ali šestnajstiškim sistemom pa lahko uberemo bližnjico, saj vsaka oktalna števka predstavlja tri binarne števke, vsaka šestnajstiška števka pa predstavlja štiri binarne števke. Podoben trik za katero koli drugo osnovo, ki je potenca števila 2, lahko uporabimo isti trik.
+
+### Desetiški v dvojiški
+
+Za pretvorbo desetiškega števila v dvojiški sistem delimo število z 2 in zapisujemo ostanke, dokler ne pridemo do 0. Ostanki, zapisani od spodaj navzgor, tvorijo dvojiško število.
+
+**Primer:** Pretvorimo desetiško število 42 v dvojiški sistem:
+
+$$
+\begin{align*}
+42 / 2 &= 21 & \text{ost. } 0 \\
+21 / 2 &= 10 & \text{ost. } 1 \\
+10 / 2 &= 5 & \text{ost. } 0 \\
+5 / 2 &= 2 & \text{ost. } 1 \\
+2 / 2 &= 1 & \text{ost. } 0 \\
+1 / 2 &= 0 & \text{ost. } 1 & = 101010_{(2)}
+\end{align*}
+$$
+
+### Dvojiški v desetiški
+
+Za pretvorbo dvojiškega števila v desetiški sistem pomnožimo vsako števko z 2 na potenco njenega položaja (začnemo z 0 od desne proti levi) in seštejemo rezultate.
+
+**Primer:** Pretvorimo dvojiško število 101010 nazaj v desetiški sistem:
+
+$$
+\begin{matrix}
+1 & 0 & 1 & 0 & 1 & 0 & _{(2)} \\
+\times & \times & \times & \times & \times & \times \\
+2^5 & 2^4 & 2^3 & 2^2 & 2^1 & 2^0 \\
+\hline
+32 & 0 & 8 & 0 & 2 & 0 & = & 42_{(10)} \\
+\end{matrix}
+$$
+
+### Dvojiški v osmiški
+
+Za pretvorbo dvojiškega števila v osmiški sistem združimo binarne števke v skupine po tri, začenši z desne strani. Vsaka skupina treh binarnih števk se nato pretvori v eno oktalno števko.
+
+**Primer:** Pretvorimo dvojiško število 101010 v osmiški sistem:
+
+$$
+\begin{matrix}
+1 0 1 & 0 1 0 & _{(2)} \\
+5 & 2 & _{(8)} \\
+\end{matrix}
+$$
+
+### Dvojiški v šestnajstiški
+
+Za pretvorbo dvojiškega števila v šestnajstiški sistem združimo binarne števke v skupine po štiri, začenši z desne strani. Vsaka skupina štirih binarnih števk se nato pretvori v eno šestnajstiško števko.
+
+**Primer:** Pretvorimo dvojiško število 101010 v šestnajstiški sistem:
+
+$$
+\begin{matrix}
+0001 & 0101 & _{(2)} \\
+1 & 5 & _{(16)} \\
+\end{matrix}
+$$
+
+## Računanje v dvojiškem sistemu
+
+## Preverjanje pravilnosti zapisov
+
+Najbolj osnovne metode preverjanja pravilnosti zapisov v binarnem sistemu so prečna/vzdolžna pariteta in kontrolna vsota.
+
+- **Prečna pariteta**: Preverja se, ali je število 1 v vrstici ali stolpcu sodo ali liho. Če je pariteta sodo, mora biti število 1 sodo; če je pariteta liho, mora biti število 1 liho.
+- **Vzdolžna pariteta**: Podobno kot prečna pariteta, vendar se preverja vzdolž stolpcev namesto vrstic.
+- **Kontrolna vsota**: Sešteje se število 1 v vrstici ali stolpcu in se preveri, ali je vsota deljiva z določenim številom (npr. 2 za sodo/lihost).
