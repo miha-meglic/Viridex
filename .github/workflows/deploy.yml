@@ -1,0 +1,64 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies (website)
+        working-directory: website
+        run: npm install
+
+      - name: Install dependencies (books)
+        working-directory: books
+        run: npm install
+
+      - name: Build Astro site
+        working-directory: website
+        run: npm run build
+
+      - name: Build Docusaurus site
+        working-directory: books
+        run: npm run build
+
+      - name: Copy Docusaurus build to Astro dist/learn
+        run: |
+          mkdir -p website/dist/learn
+          cp -r books/build/* website/dist/learn/
+
+      - name: Upload pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: website/dist
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

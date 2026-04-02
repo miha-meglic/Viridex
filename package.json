@@ -1,0 +1,20 @@
+{
+  "name": "viridex",
+  "description": "Collection of textbooks and handbooks for secondary school subjects",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "npm run dev --workspace=website",
+    "dev:books": "npm run start --workspace=books",
+    "build": "npm run build --workspace=website && npm run build --workspace=books && node scripts/combine-builds.mjs",
+    "preview": "npm run preview --workspace=website",
+    "format": "prettier --write ."
+  },
+  "workspaces": [
+    "website",
+    "books"
+  ],
+  "devDependencies": {
+    "prettier": "^3.8.1"
+  }
+}
