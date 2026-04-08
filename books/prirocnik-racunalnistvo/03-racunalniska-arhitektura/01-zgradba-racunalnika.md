@@ -35,14 +35,14 @@ V teoriji CPE pri izvajanju ukaza izvaja naslednje korake:
 - **Execute (izvede ukaz)**: Procesor izvede zahtevano operacijo, ki lahko vključuje aritmetične ali logične operacije, premikanje podatkov ali nadzorni tok.
 - **Store / Writeback (shrani rezultate)**: Procesor shrani rezultate operacije nazaj v pomnilnik ali v registre, odvisno od vrste ukaza.
 
-### Pomnilnilnik {/*#pomnilnik*/}
+### Pomnilnilnik
 
 Pomnilnik hrani programe in podatke, ki jih CPE uporablja med izvajanjem ukazov. Pomnilnik je organiziran v naslove, kjer vsak naslov vsebuje določeno količino podatkov (npr. 8, 16, 32 ali 64 bitov).
 
 Poznamo več vrst pomnilnikov, ki se na najbolj osnovni ravni delijo na brali in bralno-pisalni pomnilnik, trajni in začasni pomnilnik ter sekvenčni in naključno dostopni pomnilnik.
 Bolj pomembne kratice, ki se pojavljajo v kontekstu pomnilnika, si lahko ogledate v [slovarčku](#pomnilniski-slovarcek).
 
-#### Pomnilniška hierarhija
+#### Pomnilniška hierarhija {/*#pomnilniska-hierarhija*/}
 
 Poleg osnovne delitve pa pomnilnik delimo tudi glede na hitrost, kapaciteto in ceno. Na vrhu hierarhije so hitri, a dragi pomnilniki z majhno kapaciteto, medtem ko so na dnu hierarhije počasni, a poceni pomnilniki z veliko kapaciteto. Ta hierarhija omogoča učinkovito upravljanje s podatki in optimizacijo delovanja računalnika.
 
