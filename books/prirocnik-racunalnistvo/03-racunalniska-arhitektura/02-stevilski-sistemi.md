@@ -137,7 +137,7 @@ Najbolj osnovne metode preverjanja pravilnosti zapisov v binarnem sistemu so pre
 
 ## Zapisovanje negativnih in decimalnih števil
 
-### Negativna števila {#negativna-stevila}
+### Negativna števila {/*#negativna-stevila*/}
 
 Za predstavitev negativnih števil v dvojiškem sistemu se uporablja dvojiški komplement. V tem zapisu prvo števko (najbolj levo) imenujemo predznak, kjer 0 pomeni pozitivno število, 1 pa negativno število. To pomeni da lahko z dvojiškim komplementom predstavimo števila od $-2^{(n-1)}$ do $2^{(n-1)}-1$, kjer je $n$ število bitov (8 bitni zapis torej lahko predstavi števila od $-128$ do $127$).
 
