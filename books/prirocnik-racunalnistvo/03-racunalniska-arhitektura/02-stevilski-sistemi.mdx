@@ -51,11 +51,11 @@ Za pretvorbo dvojiškega števila v desetiški sistem pomnožimo vsako števko z
 
 $$
 \begin{matrix}
-1 & 0 & 1 & 0 & 1 & 0 & _{(2)} \\
+1 & 0 & 1 & 0 & 1 & 0 \\
 \times & \times & \times & \times & \times & \times \\
 2^5 & 2^4 & 2^3 & 2^2 & 2^1 & 2^0 \\
 \hline
-32 & 0 & 8 & 0 & 2 & 0 & = & 42_{(10)} \\
+32 & 0 & 8 & 0 & 2 & 0 & = 42_{(10)} \\
 \end{matrix}
 $$
 
@@ -87,6 +87,46 @@ $$
 
 ## Računanje v dvojiškem sistemu
 
+Računanje v dvojiškem sistemu sledi podobnim pravilom kot v desetiškem sistemu, vendar z upoštevanjem, da so možne števke samo 0 in 1. Osnovne operacije vključujejo seštevanje, odštevanje, množenje in deljenje.
+
+### Seštevanje
+
+Pri seštevanju dvojiških števil seštejemo števke na istem položaju, pri čemer upoštevamo prenos, če je vsota 2 ali več.
+
+**Primer:** Seštejmo dvojiški številki 1010 in 1101:
+
+$$
+\begin{matrix}
+    & & 1 & 0 & 1 & 0 & = 10_{(10)} \\
+    + & \space_1 & 1 & 1 & 0 & 1 & = 13_{(10)} \\
+    \hline
+    & 1 & 0 & 1 & 1 & 1 & = 23_{(10)} \\
+\end{matrix}
+$$
+
+### Odštevanje
+
+Za odštevanje dvojiških števil se pogosto uporablja metoda [dvojiškega komplementa](#negativna-stevila), saj omogoče mogoča enostavno izvajanje odštevanja, saj lahko namesto odštevanja števila A od števila B izvedemo seštevanje števila B in dvojiškega komplementa števila A.
+
+### Množenje in deljenje
+
+Množenje in deljenje v dvojiškem sistemu se izvaja podobno kot v desetiškem sistemu, vendar z upoštevanjem, da so možne števke samo 0 in 1. Pri množenju seštejemo premike in pri deljenju izvajamo ponavljajoče se odštevanje.
+
+**Primer:** Množenje dvojiških številk 1010 in 101:
+
+$$
+\begin{matrix}
+    & & & 1 & 0 & 1 & 0 & = 10_{(10)} \\
+    \times & & & & 1 & 0 & 1 & = 5_{(10)} \\
+    \hline
+    & & & 1 & 0 & 1 & 0 \\
+    + & & 0 & 0 & 0 & 0 \\
+    + & 1 & 0 & 1 & 0 \\
+    \hline
+    & 1 & 1 & 0 & 0 & 1 & 0 & = 50_{(10)} \\
+\end{matrix}
+$$
+
 ## Preverjanje pravilnosti zapisov
 
 Najbolj osnovne metode preverjanja pravilnosti zapisov v binarnem sistemu so prečna/vzdolžna pariteta in kontrolna vsota.
@@ -94,3 +134,30 @@ Najbolj osnovne metode preverjanja pravilnosti zapisov v binarnem sistemu so pre
 - **Prečna pariteta**: Preverja se, ali je število 1 v vrstici ali stolpcu sodo ali liho. Če je pariteta sodo, mora biti število 1 sodo; če je pariteta liho, mora biti število 1 liho.
 - **Vzdolžna pariteta**: Podobno kot prečna pariteta, vendar se preverja vzdolž stolpcev namesto vrstic.
 - **Kontrolna vsota**: Sešteje se število 1 v vrstici ali stolpcu in se preveri, ali je vsota deljiva z določenim številom (npr. 2 za sodo/lihost).
+
+## Zapisovanje negativnih in decimalnih števil
+
+### Negativna števila {#negativna-stevila}
+
+Za predstavitev negativnih števil v dvojiškem sistemu se uporablja dvojiški komplement. V tem zapisu prvo števko (najbolj levo) imenujemo predznak, kjer 0 pomeni pozitivno število, 1 pa negativno število. To pomeni da lahko z dvojiškim komplementom predstavimo števila od $-2^{(n-1)}$ do $2^{(n-1)}-1$, kjer je $n$ število bitov (8 bitni zapis torej lahko predstavi števila od $-128$ do $127$).
+
+Dvojiški komplement števila se izračuna tako, da najprej izračunamo eniški komplement (zamenjamo 0 z 1 in 1 z 0) in nato dodamo 1.
+
+Za primer izračunajmo dvojiški komplement števila $00001010 = 10_{(10)}$ v 8-bitnem zapisu:
+
+1. Eniški komplement: $11110101$
+2. Dodamo 1: $11110101 + 1 = 11110110 = -10_{(10)}$
+
+### Decimalna števila
+
+Decimalna števila se lahko v računalništvu predstavljajo na različne načine, odvisno od potreb natančnosti in obsega. Dva najpogostejša načina sta fiksna vejica in plavajoča vejica.
+
+**Fiksna vejica**: Decimalna vejica je na fiksnem mestu, kar pomeni, da je število decimalnih mest določeno vnaprej.
+
+Torej bi lahko zapisali število $3.25_{(10)}$ kot $11.01_{(2)}$ oz. $1101_{(2)}$, kjer je decimalna vejica postavljena med drugo in tretjo števko od desne proti levi. V tem primeru bi imeli dve decimalni mesti, kar pomeni da je najmanjša možna vrednost $0.25_{(10)}$.
+
+**Plavajoča vejica**: Decimalna vejica se lahko premika, kar omogoča predstavitev širšega razpona števil. Število se običajno zapisuje v obliki $(-1)^p \times m \times 2^e$, kjer je $p$ predznak (spet 0 za pozitivno in 1 za negativno), $m$ mantisa in $e$ eksponent. (Več: [IEEE 754 standard](https://en.wikipedia.org/wiki/IEEE_754))
+
+Primer zapisa v 32-bitni plavajoči vejici:
+
+![Primer zapisa v 32-bitni plavajoči vejici](https://upload.wikimedia.org/wikipedia/commons/d/d2/Float_example.svg)
