@@ -47,7 +47,7 @@ Enota podatkov, ki se prenaša preko Etherneta, se imenuje **okvir** (*angl. fra
 
 ### MAC naslov
 
-MAC naslov (*angl. Media Access Control address*) je edinstven identifikator, dodeljen vsaki omrežni napravi, ki se uporablja za komunikacijo na fizični povezavi. Sestavljen je iz šestih skupin dvomestnih heksadecimalnih števil, ločenih s dvopičjem ali pomišljajem (npr. `00:1A:2B:3C:4D:5E`). Ta se naprej deli na dva dela: prvi del (prvi 3 bajti) predstavlja identifikator proizvajalca (OUI, *angl. Organizationally Unique Identifier*), medtem ko drugi del (zadnji 3 bajti) predstavlja serijsko številko naprave, ki jo določi proizvajalec.
+MAC naslov (*angl. Media Access Control address*) je edinstven identifikator, dodeljen vsaki omrežni napravi, ki se uporablja za komunikacijo na fizični povezavi. Sestavljen je iz šestih bajtov, zapisanih kot dvomestna heksadecimalnih števila, ločena z dvopičjem ali pomišljajem (npr. `00:1A:2B:3C:4D:5E`). Ta se naprej deli na dva dela: prvi del (prvi 3 bajti) predstavlja identifikator proizvajalca (OUI, *angl. Organizationally Unique Identifier*), medtem ko drugi del (zadnji 3 bajti) predstavlja serijsko številko naprave, ki jo določi proizvajalec.
 
 ## Dostopni protokoli
 
