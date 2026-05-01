@@ -49,6 +49,14 @@ const config: Config = {
     ],
   ],
 
+  scripts: [
+    {
+      src: "https://analytics.intralab.si/script.js",
+      defer: true,
+      "data-website-id": "237e0e24-7567-4ebe-98b6-3e57f63a5f95",
+    },
+  ],
+
   stylesheets: [
     {
       href: "https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css",
