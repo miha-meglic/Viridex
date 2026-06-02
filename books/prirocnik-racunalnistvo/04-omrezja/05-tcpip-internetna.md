@@ -6,17 +6,18 @@ Internetna plast modela TCP/IP je odgovorna za usmerjanje in prenos podatkov med
 
 ## Internetni protokol (IP)
 
-Internetni protokol je temeljni protokol, ki omogoča komunikacijo med omrežji. Torej ko zapustimo naše lokalno omrežje in se povežemo z internetom, se naši podatki prenašajo prek IP protokola.
+Internetni protokol je temeljni protokol, ki omogoča komunikacijo med omrežji. Torej ko zapustimo naše lokalno omrežje in se povežemo z internetom, se naši podatki prenašajo preko protokola IP.
+
+Informacije se enkapsulirajo v pakete, ki so sestavljeni iz glave in podatkov. Glava paketa vsebuje informacije o IP naslovu izvora in cilja, dolžini paketa, protokolu, ki se uporablja v zgornji plasti (npr. TCP ali UDP), in druge kontrolne informacije, kot so čas življenja (TTL -- *angl. Time To Live*) in kontrolna vsota (*angl. checksum*).  
+Tu se ne bomo poglabljali v podrobnosti o strukturi IP paketov, saj so odvisne od različice IP in dodatne funkcionalnosti, kot so možnosti in razširitve. Vendar pa je pomembno razumeti, da glava paketa vsebuje ključne informacije, ki omogočajo pravilno usmerjanje in dostavo podatkov prek interneta.
 
 ### Naslov IP
 
 Internetni protokol uporablja naslove IP za identifikacijo naprav in usmerjanje podatkov. Obstajata dve glavni različici IP: IPv4 in IPv6.
 
-Informacije se v enkapsulirajo v pakete, ki so sestavljeni iz glave in podatkov. Glava paketa vsebuje informacije o IP naslovu izvora in cilja, dolžini paketa, protokolu, ki se uporablja v zgornji plasti (npr. TCP ali UDP), in druge kontrolne informacije, kot so čas življenja (TTL -- *angl. Time To Live*) in kontrolna vsota (*angl. checksum*).  
-Tu se ne bomo poglabljali v podrobnosti o strukturi IP paketov, saj so odvisne od različice IP in dodatne funkcionalnosti, kot so možnosti in razširitve. Vendar pa je pomembno razumeti, da glava paketa vsebuje ključne informacije, ki omogočajo pravilno usmerjanje in dostavo podatkov prek interneta.
-
 <details>
 <summary>**Zgodovina IP naslovov**</summary>
+
 IPv4 je bil prvi standard za naslove IP, ki je bil uveden v 80-ih letih. Uporablja 32-bitne naslove, kar omogoča približno 4,3 milijarde edinstvenih naslovov. Zaradi hitre rasti interneta in povečanega števila naprav, ki se povezujejo, se je začelo pojavljati pomanjkanje IPv4 naslovov.
 
 Sprva smo težavo rešili z uporabo NAT (Network Address Translation), ki omogoča da si več naprav v omrežju deli en javni naslov. Vendar pa je to le začasna rešitev, saj se število naprav še naprej povečuje.
